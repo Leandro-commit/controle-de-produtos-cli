@@ -16,8 +16,6 @@ else:
     desconto = compra * 0.20
     print("Desconto de 20% aplicado!")
 
-# Só iremos fazer os calculos se o valor inserido for acima de 0
-
 if compra > 0:
     valor_final = compra - desconto
 

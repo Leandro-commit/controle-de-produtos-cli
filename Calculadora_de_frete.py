@@ -1,0 +1,8 @@
+peso = float(input("Insira o peso do pacote: "))
+print("-" * 30)
+print("Tipo de envio:\n")
+print("E. Econômico")
+print("N. Normal")
+print("EX. Expresso\n")
+envio = input("Escolha a letra correspondente (E, N ou EX): ")
+print("-" * 30)
