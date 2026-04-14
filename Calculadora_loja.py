@@ -43,7 +43,7 @@ elif categoria == "V":
         print("Desconto: 10%")
 
     else:
-        desconto = compra * 0.15
+        desconto = compra * 0.10
         print("Categoria: Vestuário")
         print("Faixa: Acima de R$ 500,00")
         print("Desconto: 10%")
