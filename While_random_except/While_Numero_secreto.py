@@ -11,7 +11,13 @@ while tentativas < limite:
         print("Muito alto! Tenta novamente.")
     elif chute < numero_secreto:
         print("Muito baixo! Tenta novamente.")
+
     else:
-        resta = limite - tentativas
-        if resta > 0:
-            print(f"Você tem {resta} tentativas restante!")
+        print(f"Parabéns! Você acertou em {tentativas} tentativa(s)")
+        break
+
+    resta = limite - tentativas
+    if resta > 0:
+        print(f"Você ainda tem {resta} tentativa(s).")
+    else:
+        print("Suas tentativas acabaram!")
