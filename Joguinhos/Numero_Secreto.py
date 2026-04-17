@@ -9,7 +9,7 @@ while True:
 
     while tentativas < limite:
         try:
-            chute = int(input("\nDigite um número: "))
+            chute = int(input("\nDigite um número entre 0-20: "))
         except ValueError:
             print("Digite um número!")
             continue
