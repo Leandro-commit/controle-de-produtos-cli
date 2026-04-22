@@ -9,19 +9,20 @@ while True:
 
     print("\nNovo jogo iniciado ▶️")
 
-    jogada = input("\nPedra, papel ou tesoura? ").lower()
-    if jogada not in ["pedra", "papel", "tesoura"]:
+    print("\n1. Pedra\n2. Papel\n3. Tesoura")
+    jogada = input("\nEscolha uma opção: ")
+    if jogada not in ["1", "2", "3"]:
         print("Jogada inválida")
         continue
 
     if jogada == computador:
         print("Empate")
-        empates += 1  # Isso equivale a ''emptes = empates +1'' (como se criasse uma nova varíavel)
+        empates += 1
 
     elif (
-        (jogada == "pedra" and computador == "tesoura")
-        or (jogada == "tesoura" and computador == "papel")
-        or (jogada == "papel" and computador == "pedra")
+        (jogada == "1" and computador == "tesoura")
+        or (jogada == "3" and computador == "papel")
+        or (jogada == "2" and computador == "pedra")
     ):
         print("Você ganhou ✅")
         vitorias += 1

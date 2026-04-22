@@ -5,7 +5,7 @@ while True:
     tentativas = 0
     limite = 5
 
-    print("\nNovo jogo iniciado!")
+    print("\nNovo jogo iniciado ✅")
 
     while tentativas < limite:
         try:
