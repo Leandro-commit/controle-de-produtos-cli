@@ -24,4 +24,4 @@ while tentativas < limite:
         print(f"Restam {resta} tentativa(s)")
 
 else:
-    print("Acesso bloqueado!")
+    print("Acesso bloqueado! Tente novamente daqui 60 minutos.")
