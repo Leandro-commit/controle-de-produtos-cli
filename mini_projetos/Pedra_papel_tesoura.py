@@ -37,4 +37,5 @@ while True:
     if encerrar == "s":
         continue
     else:
+        print("Obrigado por jogar!")
         break

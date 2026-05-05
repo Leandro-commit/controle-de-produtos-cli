@@ -1,31 +1,85 @@
-while True:
+def formatar_real(valor):
+    return f"{valor:.2f}".replace(".", ",")
 
-    print("Olá, o que deseja comprar:")
-    print("1 - Coxinha R$ 5,00")
-    print("2 - Pastel R$ 7,00")
-    print("3 - Café R$ 4,00")
-    print("4 - Suco R$ 6,00")
-    print("5 - SAIR")
+
+saldo = 0
+movimentacoes = []
+
+print("PLANILHA PESSOAL DE CONTROLE FINANCEIRO.")
+
+while True:
+    print("\n1 - Adicionar entrada (ganho)")
+    print("2 - Adicionar saída (gasto)")
+    print("3 - Ver saldo atual")
+    print("4 - Listar movimentações")
+    print("5 - Sair\n")
 
     try:
-        escolha = int(input("Escolha uma opção: "))
-        if escolha > 5:
-            print("Opção númerica inexistente!")
+        opcao = int(input("Escolha uma opção: "))
     except ValueError:
-        print("Escolha uma opção entre 1 e 5.")
+        print("*Digite uma opção válida (entre 1 e 5)*")
         continue
 
-    if escolha in (1, 2, 3, 4, 5):
-        try:
-            qtd = int(input("Quantidade: "))
-        except ValueError:
-            print("Digite apenas uma quantidade númerica!")
+    if opcao not in (1, 2, 3, 4, 5):
+        print("*Opção inválida (escolha entre 1 e 5)*")
+        continue
 
-        if escolha == 1:
-            print(f"Total: {qtd * 5}")
+    # ---ENTRADA---
+    elif opcao == 1:
+        while True:
+            try:
+                entrada = float(input("Valor da entrada: R$ ").replace(",", "."))
+                break
+            except ValueError:
+                print("Digite um valor válido!")
 
-        elif escolha == 2:
-            print(f"Total: {qtd * 7}")
+        descricao = input("Adicione uma descrição: ")
 
-        elif escolha == 3:
-            print(f"Total: {total * 4}")
+        movimentacao = {"tipo": "entrada", "valor": entrada, "descricao": descricao}
+
+        movimentacoes.append(movimentacao)
+        saldo += entrada
+
+        print("Entrada adicionada!")
+
+    # ---SAÍDA---
+    elif opcao == 2:
+        while True:
+            try:
+                saida = float(input("Valor da saída: R$ ").replace(",", "."))
+                break
+            except ValueError:
+                print("Digite um valor válido!")
+
+        if saida > saldo:
+            print("Sua retirada é maior que o saldo atual!")
+            continue
+
+        descricao = input("Adicione uma descrição: ")
+
+        movimentacao = {"tipo": "saida", "valor": saida, "descricao": descricao}
+
+        movimentacoes.append(movimentacao)
+        saldo -= saida
+
+        print(f"Retirada com sucesso! Saldo atual: R$ {formatar_real(saldo)}")
+
+    # ---SALDO---
+    elif opcao == 3:
+        print(f"Saldo atual: R$ {formatar_real(saldo)}")
+
+    # ---HISTÓRICO---
+    elif opcao == 4:
+        if not movimentacoes:
+            print("Nenhuma movimentação registrada.")
+        else:
+            print("\n--- HISTÓRICO DE MOVIMENTAÇÕES ---\n")
+            for i, mov in enumerate(movimentacoes, start=1):
+                print(
+                    f"{i}. {mov['tipo'].capitalize()} - R$ {formatar_real(mov['valor'])} - {mov['descricao']}"
+                )
+
+    # ---SAIR---
+    elif opcao == 5:
+        print("Encerrando o sistema...")
+        break

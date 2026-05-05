@@ -10,7 +10,7 @@ while True:
         if continuar in ("s", "n"):
             break
         else:
-            print("Digite uma entrada válida")
+            print("Digite uma entrada válida!")
     if continuar == "n":
         print("Encerrando...")
         break

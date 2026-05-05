@@ -15,5 +15,5 @@ while True:
         break
 
     except ValueError:
-        print("Isso não é um número!")
+        print("Insira apenas números!")
         continue

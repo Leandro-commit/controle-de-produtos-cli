@@ -20,7 +20,6 @@ print("   Até 2x -> Sem juros")
 print("   3x ou mais -> 20% de juros")
 print("-" * 30)
 
-# Escolha da forma de pagamento
 while True:
     try:
         pgt = int(input("Selecione a forma de pagamento: "))
@@ -31,7 +30,6 @@ while True:
     except ValueError:
         print("Digite um número válido!")
 
-# Processamento
 if pgt == 1:
     desconto = compra * 0.10
     valor_final = compra - desconto
