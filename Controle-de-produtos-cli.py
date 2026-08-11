@@ -41,20 +41,6 @@ def cadastrar_produto():
     print("\033[92mProduto cadastrado com sucecesso!\n\033[0m")
 
 
-# def listar_produtos():
-#     if not produtos:
-#         print("Nenhum produto cadastrado!")
-#         return
-
-#     for produto in produtos:
-#         print(
-#             f"Nome: {produto['nome']} \n"
-#             f"Preço: {f'{produto['preco']:.2f}'.replace('.', ',')} \n"
-#             f"Quantidade: {produto['qtd']}"
-#         )
-#         print("-" * 20)
-
-
 def buscar_produto():
     nome = input("Digite o nome do produto que deseja buscar: ")
     encontrado = False
