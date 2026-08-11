@@ -77,7 +77,9 @@ def listar_remover():
         )
         if remover >= 1 and remover <= len(produtos):
             produto_removido = produtos.pop(remover - 1)
-            print(f"\n{produto_removido['nome']} foi removido do carrinho!\n")
+            print(
+                f"\n\033[31m{produto_removido['nome']} foi removido do carrinho!\033[0m\n"
+            )
 
         elif remover == 0:
             print("Voltando ao menu...\n")
